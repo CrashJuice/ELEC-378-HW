@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-D=100
+D=25
 volume = np.squeeze(np.zeros((1,D)))
 
 
