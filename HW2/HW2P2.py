@@ -29,7 +29,7 @@ plt.title(f"real grayscale")
 plt.axis("off")
 plt.show()
 
-k = 10  # rank value
+k = 50  # rank value
 A_approx = U[:, :k] @ np.diag(S[:k]) @ Vt[:k, :]
 
 plt.figure(figsize=(8, 8))
