@@ -3,16 +3,13 @@ from scipy.io.wavfile import write
 import numpy as np
 import IPython
 
-
 data1 = loadmat('cauchy_schwarz_decoding.mat')
 data2 = loadmat('cauchy_schwarz_decoding_2.mat')
-
 
 y = np.squeeze(data2['y2'])
 c0 = np.squeeze(data1['c0'])
 c1 = np.squeeze(data1['c1'])
 chrp = np.squeeze(data2['chrp'])
-
 
 print(chrp.size)
 print(y.size)
