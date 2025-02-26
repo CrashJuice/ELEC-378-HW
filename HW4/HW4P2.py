@@ -30,7 +30,6 @@ plt.show()
 #indicating which cluster each data point lives in
 assignment = np.where(eaves_pca[:,0] > np.median(eaves_pca[:,0]), 1, 0)
 
-# Color the Data - feel free to choose whatever colors you want
 colors = np.choose(assignment, ['#1f77b4', '#ff7f0e'])
 
 plt.scatter(eaves_pca[:,0], eaves_pca[:, 1], c=colors)
