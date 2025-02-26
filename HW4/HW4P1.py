@@ -26,14 +26,11 @@ plt.ylabel('Feature 2')
 plt.title('PCA Projection of Image Colors')
 plt.show()
 
-
 import numpy as np
 
 def kmeans(X, k=64, max_iterations=100):
    
-  
     X = np.array(X)
-
     random_indices = np.random.choice(X.shape[0], k, replace=False)
     centroids = X[random_indices]
 
@@ -68,25 +65,18 @@ plt.imshow(color_quantized_data_matrix.reshape(image.shape))
 plt.title('Quantized Image with K-means')
 plt.show()
 
-
-
-
 #Using Sklearn:
 
 kmeans = KMeans(n_clusters=K, n_init=10, max_iter=100, random_state=42).fit(X)
 
-
 labels = kmeans.labels_
 kmeans_flat = kmeans.cluster_centers_[labels]  
-
 
 plt.imshow(kmeans_flat.reshape(image.shape))
 plt.title('Quantized Image (SKLearn K-means)')
 plt.show()
 
-
 #Using our labels to plot vernollis tiling onto the PCA graph
-
 plt.scatter(pixels_transformed[:, 0], pixels_transformed[:, 1], c=color_quantized_data_matrix, s=1)
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
