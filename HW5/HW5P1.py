@@ -5,15 +5,14 @@ from collections import Counter
 
 # Load the MNIST dataset
 mnist = fetch_openml('mnist_784', version=1)
-X, y = mnist.data, mnist.target.astype(int)  # Convert labels to integers
-
+X, y = mnist.data, mnist.target.astype(int)  
 # Run K-Means clustering with 10 clusters
 kmeans = KMeans(n_clusters=10, random_state=42, n_init=10)
 cluster_labels = kmeans.fit_predict(X)
 
 misclassified_counts = {}
 
-# For each digit, determine its majority cluster and count misclassifications
+
 for digit in range(10):
     # Get the indices of images that correspond to the current digit
     indices = np.where(y == digit)[0]
