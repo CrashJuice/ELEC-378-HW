@@ -5,8 +5,9 @@ data = np.load('data.npy', allow_pickle=True).item()
 X = data['X']  
 y = data['y']  
 
-# Add a column of ones at the end of X
-X = np.hstack((X, np.ones((X.shape[0], 1))))
+# WE DONT ADD A COLUMN TO X BECAUSE THAT WOULD MAKE THE SECRET MESSAGE
+#P+1 LONG INSTEAD OF P
+#X = np.hstack((X, np.ones((X.shape[0], 1))))
 
 # : Estimate using least squares
 w_star = np.linalg.inv(X.T @ X) @ X.T @ y
